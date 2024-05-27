@@ -1,0 +1,158 @@
+@font-face {
+    font-weight: 700; /* Соответствует значению bold */
+    font-family: PT-Sans;
+    src: url('fonts/PTSans.ttf') format("truetype");
+}
+
+body {
+    font-family: 'PT-Sans', sans-serif;
+    color: #333333;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Центрирование содержимого по горизонтали */
+    align-items: center; /* Центрирование содержимого по вертикали */
+    height: 100vh; /* Высота страницы равна высоте окна браузера */
+}
+
+/* Контейнер для содержимого */
+.container {
+    display: flex;
+    flex-direction: column; /* Размещение элементов в колонку */
+    justify-content: center; /* Центрирование элементов по вертикали */
+    align-items: center; /* Центрирование элементов по горизонтали */
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+}
+
+.logo {
+    max-height: 60px;
+    max-width: 100px;
+    height: auto;
+    width: auto;
+}
+
+/* Заголовки */
+h1, h2, h3, h4, h5 {
+    font-family: 'PT Sans', sans-serif;
+    color: #003366;
+    margin: 10px 0;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+h3 {
+    font-size: 16px;
+}
+
+h4 {
+    font-size: 15px;
+}
+
+h5 {
+    font-size: 14px;
+}
+
+/* Кнопки */
+button {
+    background-color: #003366;
+    color: #ffffff;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #002244;
+}
+
+/* Ссылки */
+a {
+    color: #003366;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Инпуты */
+input[type="text"], input[type="date"], input[type="password"], input[type="email"] {
+    height: 32px;
+    border-radius: 3px;
+    padding-left: 12px;
+    font-size: 13pt;
+    border: 1px solid #cccccc;
+    margin: 10px 0;
+}
+
+input[type="text"]:focus, input[type="date"]:focus, input[type="password"]:focus, input[type="email"]:focus {
+    border-color: #003366;
+}
+
+/* Авторизация формы инпутов */
+.form-auth input[type="text"], .form-auth input[type="password"], .form-auth input[type="email"] {
+    height: 40px;
+    padding-left: 14px;
+    font-size: 14pt;
+}
+
+/* Цвета */
+body {
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #003366;
+    color: white;
+    width: 100%;
+    padding: 20px 0;
+}
+
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px 0;
+}
+
+/* Градиенты */
+.gradient-bg {
+    background: linear-gradient(to right, #ff0000, #003366);
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Две колонки одинаковой ширины */
+    gap: 20px; /* Задаём промежуток между колонками */
+}
+.column {
+    padding: 10px;
+    border: 1px solid #000; /* Добавляем рамку для визуализации */
+}

@@ -1,17 +1,271 @@
 <!DOCTYPE html>
-<html lang="">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+<html lang="ru">
+<!-- добавляем русский язык -->
+<meta charset="utf-8">
+<head>
+    <link rel="stylesheet" href="asd.css">
+    <title>Простая страница на Vue.js</title>
+    <!-- подключаем фреймворк -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <header>
+        <div class="header-content">
+            <img src="logo.svg" alt="Logo" class="logo">
+            <h1>Составление отчета</h1>
+        </div>
+    </header>
+
+    <label for="start">Дата отчета:</label>
+    <input type="date" id="start" v-model="reportDate" name="trip-start"/>
+    <button v-on:click="GetReport">Создать отчет</button>
+
+    <br />
+    <br />
+    <div class="container">
+        <div class="column">
+            <div>
+                <label>ffmin:</label>
+                <p style="display: inline-block;">{{ffmin}}</p>
+            </div>
+            <div >
+                <label>flmin:</label>
+                <p style="display: inline-block;">{{flmin}}</p>
+            </div>
+            <div >
+                <label>ptmin:</label>
+                <p style="display: inline-block;">{{ptmin}}</p>
+            </div>
+            <div >
+                <label>lfmin:</label>
+                <p style="display: inline-block;">{{lfmin}}</p>
+            </div>
+            <div >
+                <label>llmin:</label>
+                <p style="display: inline-block;">{{llmin}}</p>
+            </div>
+            <div >
+                <label>tpmin:</label>
+                <p style="display: inline-block;">{{tpmin}}</p>
+            </div>
+            <div >
+                <label>ttmin:</label>
+                <p style="display: inline-block;">{{ttmin}}</p>
+            </div>
+            <div>
+                <label>fflitmin:</label>
+                <p style="display: inline-block;">{{fflitmin}}</p>
+            </div>
+            <div >
+                <label>fllitmin:</label>
+                <p style="display: inline-block;">{{fllitmin}}</p>
+            </div>
+            <div >
+                <label>ptlitmin:</label>
+                <p style="display: inline-block;">{{ptlitmin}}</p>
+            </div>
+            <div >
+                <label>lflitmin:</label>
+                <p style="display: inline-block;">{{lflitmin}}</p>
+            </div>
+            <div >
+                <label>lllitmin:</label>
+                <p style="display: inline-block;">{{lllitmin}}</p>
+            </div>
+            <div >
+                <label>tplitmin:</label>
+                <p style="display: inline-block;">{{tplitmin}}</p>
+            </div>
+            <div >
+                <label>ttlitmin:</label>
+                <p style="display: inline-block;">{{ttlitmin}}</p>
+            </div>
+        </div>
+        <div class="column">
+            <div>
+                <label>ffmax:</label>
+                <p style="display: inline-block;">{{ffmax}}</p>
+            </div>
+            <div >
+                <label>flmax:</label>
+                <p style="display: inline-block;">{{flmax}}</p>
+            </div>
+            <div >
+                <label>ptmax:</label>
+                <p style="display: inline-block;">{{ptmax}}</p>
+            </div>
+            <div >
+                <label>lfmax:</label>
+                <p style="display: inline-block;">{{lfmax}}</p>
+            </div>
+            <div >
+                <label>llmax:</label>
+                <p style="display: inline-block;">{{llmax}}</p>
+            </div>
+            <div >
+                <label>tpmax:</label>
+                <p style="display: inline-block;">{{tpmax}}</p>
+            </div>
+            <div >
+                <label>ttmax:</label>
+                <p style="display: inline-block;">{{ttmax}}</p>
+            </div>
+            <div>
+                <label>fflitmax:</label>
+                <p style="display: inline-block;">{{fflitmax}}</p>
+            </div>
+            <div >
+                <label>fllitmax:</label>
+                <p style="display: inline-block;">{{fllitmax}}</p>
+            </div>
+            <div >
+                <label>ptlitmax:</label>
+                <p style="display: inline-block;">{{ptlitmax}}</p>
+            </div>
+            <div >
+                <label>lflitmax:</label>
+                <p style="display: inline-block;">{{lflitmax}}</p>
+            </div>
+            <div >
+                <label>lllitmax:</label>
+                <p style="display: inline-block;">{{lllitmax}}</p>
+            </div>
+            <div >
+                <label>tplitmax:</label>
+                <p style="display: inline-block;">{{tplitmax}}</p>
+            </div>
+            <div >
+                <label>ttlitmax:</label>
+                <p style="display: inline-block;">{{ttlitmax}}</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 МВД. Все права защищены.</p>
+        </div>
+    </footer>
+</div>
+
+<!-- начинаем писать на Vue.js -->
+<script>
+
+    var app = new Vue({
+        el: '#app',
+
+        data:{
+            ffmin: '',
+            ffmax: '',
+            flmin: '',
+            flmax: '',
+            ptmin: '',
+            ptmax: '',
+            lfmin: '',
+            lfmax: '',
+            llmin: '',
+            llmax: '',
+            tpmin: '',
+            tpmax: '',
+            ttmin: '',
+            ttmax: '',
+            fflitmin: '',
+            fflitmax: '',
+            fllitmin: '',
+            fllitmax: '',
+            ptlitmin: '',
+            ptlitmax: '',
+            lflitmin: '',
+            lflitmax: '',
+            lllitmin: '',
+            lllitmax: '',
+            tplitmin: '',
+            tplitmax: '',
+            ttlitmin: '',
+            ttlitmax: '',
+            reportDate: ''
+        },
+
+        methods: {
+            GetReport : async function (){
+                if (!this.reportDate) {
+                    console.error('Дата не выбрана');
+                    return;
+                }
+                const formattedDate = new Date(this.reportDate).toISOString();
+                try {
+                    const response = await fetch(`http://localhost:5122/GetData?date=${encodeURIComponent(formattedDate)}`);
+                    if (!response.ok) {
+                        this.ffmin ='';
+                        this.ffmax = '';
+                        this.flmin = '';
+                        this.flmax = '';
+                        this.ptmin = '';
+                        this.ptmax = '';
+                        this.lfmin = '';
+                        this.lfmax = '';
+                        this.llmin = '';
+                        this.llmax = '';
+                        this.tpmin = '';
+                        this.tpmax = '';
+                        this.ttmin = '';
+                        this.ttmax = '';
+                        this.fflitmin = '';
+                        this.fflitmax = '';
+                        this.fllitmin = '';
+                        this.fllitmax = '';
+                        this.ptlitmin = '';
+                        this.ptlitmax = '';
+                        this.lflitmin = '';
+                        this.lflitmax = '';
+                        this.lllitmin = '';
+                        this.lllitmax = '';
+                        this.tplitmin = '';
+                        this.tplitmax = '';
+                        this.ttlitmin = '';
+                        this.ttlitmax = '';
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    else{
+                        var a = await response.json();
+
+                        this.ffmin = a.ffMin;
+                        this.ffmax = a.ffMax;
+                        this.flmin = a.flMin;
+                        this.flmax = a.flMax;
+                        this.ptmin = a.ptMin;
+                        this.ptmax = a.ptMax;
+                        this.lfmin = a.lfMin;
+                        this.lfmax = a.lfMax;
+                        this.llmin = a.llMin;
+                        this.llmax = a.llMax;
+                        this.tpmin = a.tpMin;
+                        this.tpmax = a.tpMax;
+                        this.ttmin = a.ttMin;
+                        this.ttmax = a.ttMax;
+                        this.fflitmin = a.fflitMin;
+                        this.fflitmax = a.fflitMax;
+                        this.fllitmin = a.fllitMin;
+                        this.fllitmax = a.fllitMax;
+                        this.ptlitmin = a.ptlitMin;
+                        this.ptlitmax = a.ptlitMax;
+                        this.lflitmin = a.lflitMin;
+                        this.lflitmax = a.lflitMax;
+                        this.lllitmin = a.lllitMin;
+                        this.lllitmax = a.lllitMax;
+                        this.tplitmin = a.tplitMin;
+                        this.tplitmax = a.tplitMax;
+                        this.ttlitmin = a.ttlitMin;
+                        this.ttlitmax = a.ttlitMax;
+                    }
+                } catch (error) {
+                    console.error('Fetch error:', error);
+                }
+            }
+        }
+    })
+</script>
+</body>
 </html>
